@@ -1,0 +1,52 @@
+{
+  "defaults": {
+    "models": [
+      "generic"
+    ],
+    "output": "pretty",
+    "preset": "",
+    "overrides": {
+      "task": "",
+      "tone": "",
+      "length": "",
+      "format": "",
+      "audience": "",
+      "language": "",
+      "constraints": []
+    }
+  },
+  "providers": {
+    "openai": {
+      "apiKeyEnv": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "model": ""
+    },
+    "claude": {
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "baseUrl": "https://api.anthropic.com"
+    },
+    "gemini": {
+      "apiKeyEnv": "GEMINI_API_KEY",
+      "baseUrl": "https://generativelanguage.googleapis.com"
+    },
+    "deepseek": {
+      "apiKeyEnv": "DEEPSEEK_API_KEY",
+      "baseUrl": "https://api.deepseek.com"
+    },
+    "qwen": {
+      "apiKeyEnv": "QWEN_API_KEY",
+      "baseUrl": "https://dashscope.aliyuncs.com"
+    },
+    "minimax": {
+      "apiKeyEnv": "MINIMAX_API_KEY",
+      "baseUrl": "https://api.minimax.chat"
+    }
+  },
+  "storage": {
+    "libraryPath": "./data/prompt-library.json",
+    "feedbackPath": "./data/prompt-feedback.json"
+  },
+  "web": {
+    "port": 5173
+  }
+}

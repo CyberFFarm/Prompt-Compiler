@@ -1,0 +1,40 @@
+{
+  "name": "intent-compiler",
+  "version": "0.1.0",
+  "description": "Compile natural language intent into optimized prompts for LLMs.",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "bin": {
+    "intent": "dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "ts-node src/cli/index.ts",
+    "dev:web": "ts-node src/web/server.ts",
+    "start": "node dist/cli/index.js",
+    "start:web": "node dist/web/server.js",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier -w .",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "express": "^4.21.2",
+    "dotenv": "^16.4.7",
+    "undici": "^6.21.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.2",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
