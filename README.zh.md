@@ -16,6 +16,37 @@ Intent Compiler 被设计为可复用的 Prompt 工程层，适用于 CLI 工具
 - Prompt 变体
 - 多模型适配结果
 
+## 核心思路
+
+不再直接手写 Prompt，而是提供意图。
+Intent Compiler 会把意图按编译流水线处理：
+
+```text
+用户意图
+  ↓
+意图解析
+  ↓
+Prompt 结构生成
+  ↓
+Prompt 优化
+  ↓
+可执行 Prompt
+```
+
+这把 Prompt 工程当作系统化的转换过程，类似编译器把高级语言转成可执行指令。
+
+## 研究目标
+
+- 从意图编译 Prompt，而不是手写模板
+- 通过结构化变换和反馈回路提升 Prompt 质量
+- 让 Prompt 工程可复现、可测试，接近软件工程流程
+
+Intent Compiler 目前是一个早期、研究驱动的开源实验，会随着 LLM 生态持续演进。
+
+## 长期愿景
+
+Prompt 工程可以发展为一门结构化学科：Prompt 是结构化产物，流程可测试可复现，开发者能像搭软件系统一样组合 Prompt 流水线。
+
 ## 核心功能
 
 - 意图解析：自然语言转结构化字段
@@ -241,6 +272,11 @@ npm run format
 - 若 `intent run` 网络超时，请检查代理环境变量（`HTTP_PROXY` / `HTTPS_PROXY`）和网络连通性。
 - 若 OpenAI 返回 401/403，请检查 `OPENAI_API_KEY` 与模型权限。
 - 若配置未生效，请检查 `INTENT_CONFIG` 路径或本地 `intent.config.json` 位置。
+
+## 关于维护者
+
+Intent Compiler 是由一名学习人工智能的大学生独立维护的开源项目。
+项目起源于对人类如何与 AI 系统交互的探索，以及如何通过工具降低 Prompt 工程门槛。
 
 ## 贡献指南
 

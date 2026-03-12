@@ -16,6 +16,37 @@ Instead of manually writing prompt templates per task, you provide intent text p
 - prompt variants
 - per-model adapted prompts
 
+## Core Idea
+
+Instead of writing prompts directly, users provide intent.
+Intent Compiler then processes this intent through a compilation pipeline:
+
+```text
+User Intent
+  ↓
+Intent Parsing
+  ↓
+Prompt Structure Generation
+  ↓
+Prompt Optimization
+  ↓
+Executable Prompt
+```
+
+This treats prompt engineering as a systematic transformation process, similar to how compilers transform high-level languages into executable instructions.
+
+## Research Goals
+
+- Compile prompts from intent instead of manually writing them
+- Improve prompt quality through structured transformations and feedback loops
+- Make prompt engineering reproducible and testable, like software workflows
+
+Intent Compiler is an early, research-driven open-source experiment that evolves alongside the LLM ecosystem.
+
+## Long-Term Vision
+
+Prompt engineering can mature into a structured discipline where prompts are structured artifacts, workflows are testable and reproducible, and developers compose prompt pipelines like software systems.
+
 ## Core Features
 
 - Intent parsing: natural language to structured fields
@@ -241,6 +272,11 @@ npm run format
 - If `intent run` fails with network timeout, verify proxy env (`HTTP_PROXY` / `HTTPS_PROXY`) and connectivity.
 - If OpenAI returns 401/403, check `OPENAI_API_KEY` and model permission.
 - If no config is applied, verify `INTENT_CONFIG` path or local `intent.config.json` placement.
+
+## About the Maintainer
+
+Intent Compiler is developed as an independent open-source project by a university student studying artificial intelligence.
+It started as an exploration of how people interact with AI systems and how prompt engineering can be made more accessible through better tooling.
 
 ## Contributing
 
